@@ -12,7 +12,8 @@ type Props = {
 }
 const Input = ({placeholder,value,setText, isListenning,send}:Props) => {
   const textArea =  useRef<HTMLTextAreaElement | null>(null)
-
+  const container =  useRef<HTMLDivElement | null>(null)
+  
   const autoResize = (e:React.KeyboardEvent<HTMLTextAreaElement>) => {
     if(e.target instanceof HTMLTextAreaElement) {
       e.target.style.height = `${30}px`
@@ -21,9 +22,12 @@ const Input = ({placeholder,value,setText, isListenning,send}:Props) => {
      
     }
   }
+  const focus = () => {
+    container.current?.classList.toggle(`active`)
+  }
 
   return (
-    <div className={styles.container} onClick={() => {textArea.current?.select()}}>
+    <div ref={container} className={styles.container} onClick={() => {textArea.current?.select()}} onFocus={focus} onBlur={focus}>
       <textarea ref={textArea} className={styles.textarea} placeholder={placeholder} value={value} onChange={(e) => {setText(e.target.value)}} onKeyUp={autoResize}></textarea>
       <button className={styles.send} onClick={send} disabled={value === '' || value.toLowerCase().trim() === "não foi possivel entender o audio"}>
         <AiOutlineSend size='100%'/>  
