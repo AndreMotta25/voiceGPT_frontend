@@ -1,0 +1,19 @@
+.user,.gpt {
+    font-size: 1.6rem;
+    font-family: 'Roboto Condensed', sans-serif;    
+    width: 100%;
+    padding: 2rem;
+    color: #fff;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.user {
+    background-color: #2f3031;
+    /* border-bottom: 1px solid #fff; */
+}
+.gpt {
+    background-color: #58647d;
+    border-radius: 0.5rem;
+}
