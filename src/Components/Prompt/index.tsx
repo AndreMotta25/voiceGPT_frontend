@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styles from './styles.module.css'
 import {AiOutlineSend} from 'react-icons/ai'
 import Loading from '../Loading';
@@ -11,6 +11,7 @@ type Props = {
   send:() => void;
 }
 const Input = ({placeholder,value,setText, isListenning,send}:Props) => {
+  const textArea =  useRef<HTMLTextAreaElement | null>(null)
 
   const autoResize = (e:React.KeyboardEvent<HTMLTextAreaElement>) => {
     if(e.target instanceof HTMLTextAreaElement) {
@@ -22,8 +23,8 @@ const Input = ({placeholder,value,setText, isListenning,send}:Props) => {
   }
 
   return (
-    <div className={styles.container}>
-      <textarea className={styles.textarea} placeholder={placeholder} value={value} onChange={(e) => {setText(e.target.value)}} onKeyUp={autoResize}></textarea>
+    <div className={styles.container} onClick={() => {textArea.current?.select()}}>
+      <textarea ref={textArea} className={styles.textarea} placeholder={placeholder} value={value} onChange={(e) => {setText(e.target.value)}} onKeyUp={autoResize}></textarea>
       <button className={styles.send} onClick={send} disabled={value === '' || value.toLowerCase().trim() === "não foi possivel entender o audio"}>
         <AiOutlineSend size='100%'/>  
       </button>
