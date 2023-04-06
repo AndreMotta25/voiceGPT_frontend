@@ -55,7 +55,7 @@ function App() {
         const form = new FormData();
         form.append('audio', audio);
 
-        const transcription = await (await fetch("http://localhost:3333/teste/",
+        const transcription = await (await fetch("http://localhost:3333/speech/",
         {
           method:'POST',
           body: form
@@ -78,7 +78,7 @@ function App() {
       
       const filteredConversations = conversations.map((conversation) => ({role:conversation.role, content: conversation.content}));
 
-      const response = await fetch('http://localhost:3333/chat3/',
+      const response = await fetch('http://localhost:3333/chat/',
       {method:"POST",
        headers:{
         "content-type":"application/json"
