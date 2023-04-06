@@ -1,0 +1,17 @@
+@keyframes Spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.container {
+  width: 2.0rem;
+  height:  2.0rem;
+  position: relative;
+  border-radius: 50%;
+  animation: Spinner 2s linear infinite ;
+  flex-shrink: 0;  
+}
+
