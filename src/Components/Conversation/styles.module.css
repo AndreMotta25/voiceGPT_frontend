@@ -7,6 +7,8 @@
     text-align: left;
     position: relative;
     z-index: 1;
+    display: flex;
+    gap: 2rem;
 }
 
 .user {
@@ -16,4 +18,16 @@
 .gpt {
     background-color: #58647d;
     border-radius: 0.5rem;
+}
+.voice {
+    width: 20px;
+    height: 20px;
+    align-self: flex-start;
+    flex-shrink: 0;
+}
+.user .voice {
+    color: #fff;
+}
+.gpt .voice {
+    color: #2887e6;
 }
