@@ -2,37 +2,84 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.hidden {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  max-width: 96rem;
+  margin: 0 auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes animationMic {
   to {
-    transform: rotate(360deg);
+    fill: #61dafb;
   }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.microphone {
+  width: 25px;
+}
+.microphone.inactive svg {
+  fill: red;
+}
+.microphone.recording svg {
+  animation: animationMic 1s infinite;
+}
+.conversation-container
+{
+  overflow: auto;
+  height: 90%;
+  position: relative;
+  padding: 0 10px 20px 0;
+}
+.conversation-container::-webkit-scrollbar{
+  width: 5px;
+  background-color: #2f3031;
+}
+.conversation-container::-webkit-scrollbar-thumb{
+  background-color: #fff;
+  width: 50px;
+  border-radius: 0.5rem;
+}
+
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  position: relative;
+}
+.container-icon {
+  width: 70%;
+  position: fixed;
+  opacity: 0.5;
+  z-index: 2;
+  pointer-events: none;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+}
+.icon-gpt{ 
+  width: 50%;
+}
+.icon-gpt > rect{
+  fill: none;
+}
+
+.loading {
+  position: absolute;
+  top: -26px;
+  right: 55%;
 }
