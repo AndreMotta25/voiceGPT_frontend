@@ -6,6 +6,10 @@ Acredito que essa ideia tem muito potencial, especialmente porque permite que pe
 
 Sinta-se a vontade para mexer no codigo. Se o fizer, de uma ```estrelinha```
 
+## Observação
+Esse foi um projeto simples, então não vi a necessidade de aplicar alguns padrões e estilos que normalmente se tem em uma aplicação React. 
+Como dito antes, por ser um projeto simples, não há um sistema de login, pois acredito que isso iria tirar a simplicidade do projeto. 
+
 ## Bibliotecas usadas
 * Axios
 * commitizen
