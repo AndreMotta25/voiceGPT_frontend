@@ -19,7 +19,7 @@ Como dito antes, por ser um projeto simples, não há um sistema de login, pois 
 * Typescript
 
 # Começando
-Para esse inicio, voce já deve ter o back-end rodando. Com tudo pronto, digite ```yarn start```.
+Para esse inicio, voce já deve ter o back-end rodando. Com tudo pronto, digite ```yarn install``` e ```yarn start```.
 A tela de inicio é bem simples e intuitiva, nada muito diferente do chatGPT original. 
 
 ## Ditando um texto 
